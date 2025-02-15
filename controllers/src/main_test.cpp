@@ -2,6 +2,7 @@
 // #include <Servo.h>
 
 // #define MAX_ANGLE 180
+// // MAX_ANGLE is 180 for small servo, 270 for big servo and 300 for middle servo
 
 // void writeCustom(Servo servo, int value, int min, int max)
 // {
