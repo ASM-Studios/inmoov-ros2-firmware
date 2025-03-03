@@ -1,20 +1,20 @@
 #include <Arduino.h>
-#include "distance_lidar.hpp"
-#include "distance_sound.hpp"
+#include "lidar.hpp"
+#include "sonar.hpp"
 #include "movement.hpp"
 
 // This code works with an Arduino Mega 2560 R3
 
 void setup()
 {
-    DistanceLidar::setup();
-    DistanceSound::setup();
+    Lidar::setup();
+    Sonar::setup();
     Movement::setup();
 }
 
 void loop()
 {
-    DistanceLidar::loop();
-    DistanceSound::loop();
+    Lidar::loop();
+    Sonar::loop();
     Movement::loop();
 }

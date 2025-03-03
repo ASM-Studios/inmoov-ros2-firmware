@@ -1,6 +1,6 @@
 #pragma once
 
-class DistanceSound
+class Lidar
 {
 public:
     static void setup();

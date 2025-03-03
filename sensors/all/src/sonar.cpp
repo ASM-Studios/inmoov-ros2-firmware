@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "distance_sound.hpp"
+#include "sonar.hpp"
 
 #include <Servo.h>
 
@@ -16,18 +16,18 @@
 
 #define SERVO_PIN 3
 
-Servo servoDistanceSound;
+Servo servoSonar;
 
-void DistanceSound::setup()
+void Sonar::setup()
 {
     Serial.begin(9600);
     pinMode(TRIG_PIN, OUTPUT);
     pinMode(ECHO_PIN, INPUT);
-    servoDistanceSound.attach(SERVO_PIN);
-    servoDistanceSound.write(0);
+    servoSonar.attach(SERVO_PIN);
+    servoSonar.write(0);
 }
 
-void DistanceSound::loop()
+void Sonar::loop()
 {
     // Ensure TRIG is LOW briefly
     digitalWrite(TRIG_PIN, LOW);
@@ -50,7 +50,7 @@ void DistanceSound::loop()
     Serial.println(" cm");
 
     // Déplacement du servo
-    servoDistanceSound.write(distance);
+    servoSonar.write(distance);
 
     delay(5);
 }
